@@ -10,6 +10,7 @@ import javax.inject.Singleton
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -18,13 +19,13 @@ object DataModule {
     @Provides
     @Singleton
     @Named("URL")
-    fun getBaseURL(): String = "http://localhost:3000/user-bff/"
+    fun getBaseURL(): String = "http://10.0.2.2:3000/"
 
 
     @Provides
     @Singleton
     fun getRetrofit(@Named("URL") baseUrl: String): Retrofit = Retrofit.Builder()
-        .addConverterFactory(Json.asConverterFactory(MediaType.get("application/json")))
+        .addConverterFactory(GsonConverterFactory.create())
         .baseUrl(baseUrl)
         .build()
 

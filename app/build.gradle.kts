@@ -79,6 +79,7 @@ dependencies {
     implementation(libs.retrofit.serialization.json)
     implementation(libs.retrofit2)
     implementation(libs.retrofit2.scalars)
+    implementation(libs.retrofit2.gson)
     implementation(libs.dagger.hilt)
     kapt(libs.dagger.hilt.compiler)
 

@@ -56,7 +56,7 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        // viewModel.getInformation()
+        viewModel.getInformation()
         //observer
     }
 }
